@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 import '../models/transaction.dart';
 import './components/transaction_list.dart';
@@ -14,8 +13,31 @@ class ExpensesApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData tema = ThemeData();
+
     return MaterialApp(
       home: MyHomePage(),
+      theme: tema.copyWith(
+        colorScheme: tema.colorScheme.copyWith(
+          primary: Colors.purple,
+          secondary: Colors.amber,
+        ),
+        textTheme: tema.textTheme.copyWith(
+          headline6: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: Colors.black,
+          ),
+        ),
+        appBarTheme: AppBarTheme(
+          titleTextStyle: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 20,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
     );
   }
 }
@@ -26,14 +48,20 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  
   final _transactions = [
     Transaction(
-        id: 't1',
-        title: 'novo tenis de corrida',
-        value: 310.76,
-        date: DateTime.now()),
+      id: 't1',
+      title: 'novo tenis de corrida',
+      value: 310.76,
+      date: DateTime.now(),
+    ),
     Transaction(
-        id: 't2', title: 'conta de luz', value: 211.30, date: DateTime.now()),
+      id: 't2',
+      title: 'conta de luz',
+      value: 211.30,
+      date: DateTime.now(),
+    ),
   ];
 
   _addTransaction(String title, double value) {
@@ -47,6 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       _transactions.add(newTransaction);
     });
+
+    Navigator.of(context).pop();
   }
 
   _openTransactionFormModal(BuildContext context) {
@@ -64,9 +94,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Despesas Pessoais'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.add), 
-            onPressed: () => _openTransactionFormModal(context)
-          ),
+              icon: const Icon(Icons.add),
+              onPressed: () => _openTransactionFormModal(context)),
         ],
       ),
       body: SingleChildScrollView(
@@ -74,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
+              width: double.infinity,
               child: Card(
                 color: Colors.blue,
                 child: Text('Gráfico'),
