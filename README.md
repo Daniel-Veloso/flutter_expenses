@@ -1,16 +1,5 @@
-# expenses
+# Expenses
 
-A new Flutter project.
+This is a project from my journey of learning in Flutter from the course taught by Leonardo Moura Leitão from CODER, an application to save and graphically show personal expenses, below are some screenshots of how the application is:
 
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img width="179" alt="image" src="https://user-images.githubusercontent.com/45084446/213535629-55837623-3f60-4f5a-a01a-87f9a09f04d0.png"> <img width="179" alt="image" src="https://user-images.githubusercontent.com/45084446/213536482-ce026257-8ef3-4f6c-8d57-02c0d524de29.png">
